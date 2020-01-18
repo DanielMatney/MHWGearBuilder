@@ -8,11 +8,8 @@ class MaterialsController < ApplicationController
     if !logged_in?
       redirect "/login"
     else
-      "A new post form"
+      ""
     end
   end
   
-  get '/logout' do
-    session.clear
-  end
 end
