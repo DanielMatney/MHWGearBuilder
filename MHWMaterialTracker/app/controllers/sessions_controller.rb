@@ -4,4 +4,8 @@ class SessionsController < ApplicationController
     erb :"sessions/login.html"
   end
   
+  post '/sessions' do
+    session[:username] = params[:username]
+    redirect '/posts'
+  end
 end

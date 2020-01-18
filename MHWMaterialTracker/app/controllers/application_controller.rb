@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-    "Hello World"
+    redirect "/homepage"
   end
   
 end

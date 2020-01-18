@@ -7,8 +7,7 @@ require './config/environment'
 #end
 
 use Rack::MethodOverride
-use Rack::Session::Cookie
 use SessionsController
-use PostsController
+use MaterialsController
 use UsersController
 run ApplicationController
