@@ -8,4 +8,5 @@ use Rack::MethodOverride
 use SessionsController
 use MaterialsController
 use UsersController
+use GearController
 run ApplicationController

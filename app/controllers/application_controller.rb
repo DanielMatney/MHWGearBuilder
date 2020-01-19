@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-    erb :"sessions/homepage.html"
+    erb :"/homepage.html"
   end
   
   helpers do 

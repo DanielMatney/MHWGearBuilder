@@ -7,23 +7,16 @@ class SessionsController < ApplicationController
   post '/sessions' do
     "Logging you in"
     login(params[:username])
-    redirect '/homepage'
+    redirect '/'
   end
   
    get '/logout' do
     logout
-    redirect '/homepage'
-  end
-  
-  get '/homepage' do
-    erb :"sessions/homepage.html"
+    redirect '/'
   end
   
   get '/signup' do
     erb :"sessions/signup.html"
   end
   
-  get '/materials' do
-    erb :"sessions/materials.html"
-  end
 end
