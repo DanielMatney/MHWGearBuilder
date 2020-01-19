@@ -5,7 +5,6 @@ require './config/environment'
 #end
 
 use Rack::MethodOverride
-use MonstersController
 use SessionsController
 use MaterialsController
 use UsersController
