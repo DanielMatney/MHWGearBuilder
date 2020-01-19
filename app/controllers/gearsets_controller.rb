@@ -1,17 +1,17 @@
-class GearController < ApplicationController
+class GearsetsController < ApplicationController
   
   get '/gearsets' do
-    if !logged_in?
-      redirect "/login"
-    else
-      @gearset = Gearset.all
-      erb :"/gearset/index"
-    end
+    #if !logged_in?
+      #redirect "/login"
+    #else
+      @gearsets = Gearset.all
+      erb :"/gearsets/index.html"
+    #end
   end
  
  
  
-  get '/gearset/new' do
+  get '/gearsets/new' do
     if !logged_in?
       redirect "/login"
     end

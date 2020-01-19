@@ -4,7 +4,7 @@ class CreateGear < ActiveRecord::Migration
       t.string :name
       t.string :image
       t.integer :user_id
-      t.text :materials
+      t.integer :recipe_id
     end
   end
 end
