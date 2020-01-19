@@ -4,6 +4,7 @@ class GearController < ApplicationController
     if !logged_in?
       redirect "/login"
     else
+      @gear = Gear.all
       erb :"/gear/index"
     end
   end

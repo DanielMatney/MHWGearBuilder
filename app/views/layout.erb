@@ -1,0 +1,9 @@
+<% if logged_in? %>
+  <div align="right"><h3 style="color:white;">You are logged in as <% :username %></div></h3>
+<% else %>
+  <div align="right"><h3 style="color:white;">You are not logged in</h3></div>
+<% end %>
+
+<body background="https://cdn-ext.fanatical.com/production/product/original/5a502341-2703-4988-909a-941780b04299.jpeg?w=1200">
+  <%= yield %>
+</body>
