@@ -5,11 +5,14 @@ class GearsetsController < ApplicationController
       #redirect "/login"
     #else
       @gearsets = Gearset.all
-      erb :"/gearsets/index.html"
+      erb :"/gearsets/index"
     #end
   end
  
- 
+ get '/gearsets/:id' do
+   @gearsets = Gearset.find(params["id"])
+   erb :'gearsets/show'
+ end
  
   get '/gearsets/new' do
     if !logged_in?

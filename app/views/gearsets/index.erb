@@ -1,0 +1,6 @@
+<title>Gearset index</title>
+
+<% @gearsets.each do |set| %>
+  <h2><a href="/gearsets/<%= set.id %>"><%= set.name %></a></h2>
+  <img src="<%= set.image %>" alt = "item">
+<% end %>
