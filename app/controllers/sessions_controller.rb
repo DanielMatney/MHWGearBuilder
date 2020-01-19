@@ -23,4 +23,7 @@ class SessionsController < ApplicationController
     erb :"sessions/signup.html"
   end
   
+  get '/materials' do
+    erb :"sessions/materials.html"
+  end
 end
