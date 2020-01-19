@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :gear
+  has_many :gearset
 end

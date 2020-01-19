@@ -1,7 +1,7 @@
-<title>Gear index</title>
+<title>Gearset index</title>
 
-<% @gear.each do |item| %>
-  <h2><%= item.name %></h2>
-  <p><%= item.materials %></p>
-  <img src="<% item.image%>" alt = "item">
+<% @gearset.each do |gear| %>
+  <h2><%= gear.name %></h2>
+  <p><%= gear.materials %></p>
+  <img src="<% gear.image%>" alt = "item">
 <% end %>

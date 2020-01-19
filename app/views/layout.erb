@@ -1,9 +1,12 @@
+
 <% if logged_in? %>
-  <div align="right"><h3 style="color:white;">You are logged in as <% :username %></div></h3>
+  <div align="right"><h2>You are logged in as <% :username %></div></h2>
 <% else %>
-  <div align="right"><h3 style="color:white;">You are not logged in</h3></div>
+  <div align="right"><h3>You are not logged in</h3></div>
+  <div align="right"><a href="/login" style="font-size: 20px; font-weight: bold;">Login</a></div>
+  <div align="right"><a href="/signup" style="font-size: 20px; font-weight: bold;">Sign-up</a></div>
 <% end %>
 
-<head background="https://cdn-ext.fanatical.com/production/product/original/5a502341-2703-4988-909a-941780b04299.jpeg?w=1200">
+<body background="https://www.godisageek.com/wp-content/uploads/logo_iceborne_l.png">
   <%= yield %>
-</head>
+</body>
