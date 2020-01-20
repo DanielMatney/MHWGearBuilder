@@ -6,18 +6,19 @@ class GearsetsController < ApplicationController
     if !logged_in?
       redirect "/login"
     else
-    erb :'gearsets/new'
+    erb :'/gearsets/new'
     end
   end
  
   post '/gearsets' do
-    gearset = current_user.gearsets.build(params)
+    gearset = current_user.gearset.build(params)
+    binding.pry
     if !gearset.name.empty?
       gearset.save
       redirect '/gearsets'
     else
       @error = "Oops you entered something wrong. Try again."
-      erb :'gearsets/new'
+      erb :'/gearsets/new'
     end
   end
  

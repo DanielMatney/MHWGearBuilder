@@ -4,7 +4,7 @@
 <% @gearsets.each do |set| %>
   <h2><a href="/gearsets/<%= set.id %>"><%= set.name %></a></h2>
   <img src="<%= set.image %>" alt = "<--Picture unavailable"></br>
-  <% if set.user && session[:username] == set.user.username %>
+  <% if session[:username] == set.user.username %>
   <a href="/gearsets/<%= set.id %>/edit">Edit</a>
   <% end %>
 <% end %>
