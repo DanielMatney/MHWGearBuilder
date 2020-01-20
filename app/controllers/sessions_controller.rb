@@ -15,8 +15,4 @@ class SessionsController < ApplicationController
     redirect '/'
   end
   
-  get '/signup' do
-    erb :"sessions/signup"
-  end
-  
 end

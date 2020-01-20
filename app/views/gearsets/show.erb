@@ -1,6 +1,6 @@
 <h1><%= @gearsets.name %></h1>
 
-<form action="/gearsets/<%= @gearset.id %>" method="post">
+<form action="/gearsets/<%= @gearsets.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit">Delete</button>
 </form>

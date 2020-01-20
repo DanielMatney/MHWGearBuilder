@@ -62,11 +62,5 @@ class GearsetsController < ApplicationController
     gearset.destroy
     redirect '/gearsets'
   end
-  
-  
-  
-  
-  
-  
-  
+
 end

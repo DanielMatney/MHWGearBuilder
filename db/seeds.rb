@@ -1,7 +1,7 @@
 Gearset.destroy_all
 Material.destroy_all
 User.destroy_all
-Recipe.destroy_all
+GearsetMaterial.destroy_all
 
 puts "Seeding database..."
 gearset_list = [
@@ -12,18 +12,18 @@ gearset_list = [
 ]
 
 gearset_list.each do |name, url|
-  Gearset.create(name: name, image: url, user_id: nil, recipe_id: nil)
+  Gearset.create(name: name, image: url, user_id: nil, gearset_materials_id: nil)
 end
 
-recipe_list = [
+gearset_materials_list = [
   "Coral Pukei Alpha +",
   "Rajang Alpha +",
   "Safi'jiiva Alpha +",
   "Velkhana Alpha +"
 ]
 
-recipe_list.each do |name|
-  Recipe.create(name: name,  gearset_id: nil, material_id: nil)
+gearset_materials_list.each do |name|
+  GearsetMaterial.create(name: name,  gearset_id: nil, material_id: nil)
 end
 
 material_list = [
@@ -50,5 +50,5 @@ material_list = [
 ]
 
 material_list.each do |name|
-  Material.create(name: name, recipe_id: nil)
+  Material.create(name: name, gearset_materials_id: nil)
 end

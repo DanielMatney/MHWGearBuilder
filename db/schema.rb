@@ -13,22 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20200119191520) do
 
+  create_table "gearset_materials", force: :cascade do |t|
+    t.string  "name"
+    t.integer "gearset_id"
+    t.integer "material_id"
+  end
+
   create_table "gearsets", force: :cascade do |t|
     t.string  "name"
-    t.string  "image",     default: "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/buff-body-alpha+-set-mhw-wiki-guide2.png"
+    t.string  "image",                default: "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/buff-body-alpha+-set-mhw-wiki-guide2.png"
     t.integer "user_id"
-    t.integer "recipe_id"
+    t.integer "gearset_materials_id"
   end
 
   create_table "materials", force: :cascade do |t|
     t.string  "name"
-    t.integer "recipe_id"
-  end
-
-  create_table "recipes", force: :cascade do |t|
-    t.string  "name"
-    t.integer "gearset_id"
-    t.integer "material_id"
+    t.integer "gearset_materials_id"
   end
 
   create_table "users", force: :cascade do |t|
