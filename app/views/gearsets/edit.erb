@@ -1,0 +1,10 @@
+<h1>Edit Gearset: <%= @gearsets.name %></h1>
+<h2><%= @error %></h2>
+<form action="/gearsets/<%= @gearsets.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label>Name</label>
+  <input type="text" name="gearsets[name]" value=<%= @gearsets.name %>>
+  <label>Image URL</label>
+  <input type="text" name="gearsets[image]" value=<%= @gearsets.image %>>
+  <button type="submit">Edit Set</button>
+</form>

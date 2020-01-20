@@ -1,6 +1,8 @@
 <title>Gearset index</title>
-
+<h1><center>Saved Gearsets</center></h1>
+<h2><a href= "/gearsets/new">Create a new gear set</a></h2>
 <% @gearsets.each do |set| %>
   <h2><a href="/gearsets/<%= set.id %>"><%= set.name %></a></h2>
-  <img src="<%= set.image %>" alt = "item">
+  <img src="<%= set.image %>" alt = "<--Picture unavailable">
+  <a href="/gearsets/<%= set.id %>/edit">Edit</a>
 <% end %>
