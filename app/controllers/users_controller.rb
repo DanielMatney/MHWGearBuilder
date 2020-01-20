@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     else
       user.save
       session[:user_id] = user.id
+      session[:username] = user.username
       redirect '/gearsets'
     end
   end

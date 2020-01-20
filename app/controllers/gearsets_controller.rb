@@ -11,7 +11,7 @@ class GearsetsController < ApplicationController
   end
  
   post '/gearsets' do
-    gearset = Gearset.new(params)
+    gearset = current_user.gearsets.build(params)
     if !gearset.name.empty?
       gearset.save
       redirect '/gearsets'

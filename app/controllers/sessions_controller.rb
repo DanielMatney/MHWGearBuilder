@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     else 
       if user = User.find_by(username: params[:username], password: params[:password])
         session[:username] = user.username
+        session[:user_id] = user.id
         redirect '/gearsets'
       else
         @error = "Account not found"
