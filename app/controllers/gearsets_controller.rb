@@ -55,13 +55,13 @@ class GearsetsController < ApplicationController
     end
   end
   
-  
-  
-  
-  
   #Deleting
   
-  
+  delete '/gearsets/:id' do
+    gearset = Gearset.find(params[:id])
+    gearset.destroy
+    redirect '/gearsets'
+  end
   
   
   
