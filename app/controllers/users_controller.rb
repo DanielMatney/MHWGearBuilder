@@ -9,8 +9,12 @@ class UsersController < ApplicationController
     if user.username.empty? || user.password.empty?
       @error = "Please enter both a username and password."
       erb :'sessions/signup'
+    elsif User.find_by(username: user.username)
+      @error = "An account with that name already exists"
+      erb :'sessions/signup'
     else
       user.save
+      session[:user_id] = user.id
       redirect '/gearsets'
     end
   end

@@ -1,6 +1,7 @@
 
 <% if logged_in? %>
-  <div align="right"><h2>You are logged in as <% :username %></div></h2>
+  <div align="right"><h2>You are logged in as <%= session[:username] %></div></h2>
+  <div align="right"><h3><a href="/logout" style="font-size: 20px; font-weight: bold;">Logout</a></h3></div>
 <% else %>
   <div align="right"><h3>You are not logged in</h3></div>
   <div align="right"><a href="/login" style="font-size: 20px; font-weight: bold;">Login</a></div>
