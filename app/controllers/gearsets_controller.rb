@@ -3,11 +3,11 @@ class GearsetsController < ApplicationController
   #Creating
   
   get '/gearsets/new' do
-    #if !logged_in?
-      #redirect "/login"
-    #else
+    if !logged_in?
+      redirect "/login"
+    else
     erb :'gearsets/new'
-    #end
+    end
   end
  
   post '/gearsets' do
@@ -24,12 +24,12 @@ class GearsetsController < ApplicationController
  #Reading
  
   get '/gearsets' do
-    #if !logged_in?
-      #redirect "/login"
-    #else
+    if !logged_in?
+      redirect "/login"
+    else
       @gearsets = Gearset.all.reverse
-      erb :"/gearsets/index"
-    #end
+      erb :'/gearsets/index'
+    end
   end
  
   get '/gearsets/:id' do
@@ -40,8 +40,12 @@ class GearsetsController < ApplicationController
   #Updating
   
   get '/gearsets/:id/edit' do
-    @gearsets = Gearset.find(params[:id])
-    erb :'/gearsets/edit'
+    if logged_in?
+      @gearsets = Gearset.find(params[:id])
+      erb :'/gearsets/edit'
+    else
+      redirect '/login'
+    end
   end
   
    patch '/gearsets/:id' do

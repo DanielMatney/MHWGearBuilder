@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
   post '/login' do
     if params[:username].empty? || params[:password].empty?
       @error = "Please enter both a username and password."
-      redirect '/login'
+      erb :'sessions/login'
     else 
       if user = User.find_by(username: params[:username], password: params[:password])
         session[:username] = user.username
         redirect '/gearsets'
       else
         @error = "Account not found"
-        redirect '/login'
+        erb :'sessions/login'
       end
     end
   end

@@ -2,5 +2,7 @@
 
 <form action="/gearsets/<%= @gearsets.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
+  <% if session[:username] == @gearsets.user.username %>
   <button type="submit">Delete</button>
+  <% end %>
 </form>
