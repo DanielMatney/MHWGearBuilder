@@ -33,8 +33,12 @@ class GearsetsController < ApplicationController
   end
  
   get '/gearsets/:id' do
-    @gearsets = Gearset.find(params[:id])
-    erb :'gearsets/show'
+    if !logged_in?
+      redirect "/login"
+    else
+      @gearsets = Gearset.find(params[:id])
+      erb :'gearsets/show'
+    end
   end
  
   #Updating
@@ -50,11 +54,11 @@ class GearsetsController < ApplicationController
   
    patch '/gearsets/:id' do
     @gearsets = Gearset.find(params[:id])
-    if !params["gearsets"]["name"].empty? && !params["gearsets"]["name"].empty?
+    if !params["gearsets"]["name"].empty?
       @gearsets.update(params["gearsets"])
       redirect "/gearsets/#{params[:id]}"
     else
-      @error = "Fields cannot be empty (just toss a . in or something)"
+      @error = "Name field cannot be empty."
       erb :'/gearsets/edit'
     end
   end
