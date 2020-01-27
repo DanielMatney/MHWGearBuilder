@@ -7,13 +7,13 @@
   <label>Image URL</label>
   <input type="text" name="gearsets[image]" value=<%= @gearsets.image %>>
   <input type="submit" value="Submit">
+</form>
   
-  </br>
-  <h2>Delete Set</h2>
-  <form action="/gearsets/<%= @gearsets.id %>" method="post">
+</br>
+<h2>Delete Set</h2>
+<form action="/gearsets/<%= @gearsets.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <% if session[:username] == @gearsets.user.username %>
   <button type="submit">Delete</button>
   <% end %>
-  </form>
 </form>

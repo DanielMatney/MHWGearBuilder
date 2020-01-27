@@ -1,5 +1,13 @@
 <h1><%= @gearsets.name %></h1>
 <img src=<%= @gearsets.image %>>
+
+<% if session[:username] == @gearsets.user.username %>
+  </br>
+  <a href="/gearsets/<%= @gearsets.id %>/edit"><h2>Edit</h2></a>
+<% end %>
+  
+</br>
+<h2>Delete Set</h2>
 <form action="/gearsets/<%= @gearsets.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <% if session[:username] == @gearsets.user.username %>
