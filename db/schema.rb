@@ -16,7 +16,11 @@ ActiveRecord::Schema.define(version: 20200119191520) do
   create_table "gearset_materials", force: :cascade do |t|
     t.string  "name"
     t.integer "gearset_id"
-    t.integer "material_id"
+    t.string  "head_id"
+    t.string  "chest_id"
+    t.string  "arms_id"
+    t.string  "waist_id"
+    t.string  "legs_id"
   end
 
   create_table "gearsets", force: :cascade do |t|
@@ -24,11 +28,6 @@ ActiveRecord::Schema.define(version: 20200119191520) do
     t.string  "image",                default: "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/buff-body-alpha+-set-mhw-wiki-guide2.png"
     t.integer "user_id"
     t.integer "gearset_materials_id"
-    t.string  "head"
-    t.string  "chest"
-    t.string  "arms"
-    t.string  "waist"
-    t.string  "legs"
   end
 
   create_table "materials", force: :cascade do |t|

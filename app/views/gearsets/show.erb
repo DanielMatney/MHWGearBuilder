@@ -1,6 +1,7 @@
 <h1><%= @gearsets.name %></h1>
 <img src=<%= @gearsets.image %>>
 
+
 <% if session[:username] == @gearsets.user.username %>
   </br>
   <a href="/gearsets/<%= @gearsets.id %>/edit"><h2>Edit</h2></a>
