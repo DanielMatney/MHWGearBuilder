@@ -8,10 +8,10 @@
 <% end %>
   
 </br>
-<h2>Delete Set</h2>
 <form action="/gearsets/<%= @gearsets.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <% if session[:username] == @gearsets.user.username %>
+  <h2>Delete Set</h2>
   <button type="submit">Delete</button>
   <% end %>
 </form>

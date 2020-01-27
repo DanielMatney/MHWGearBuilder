@@ -3,11 +3,11 @@ class CreateGearsetMaterials < ActiveRecord::Migration
     create_table :gearset_materials do |t|
       t.string :name
       t.integer :gearset_id
-      t.string :head_id
-      t.string :chest_id
-      t.string :arms_id
-      t.string :waist_id
-      t.string :legs_id
+      t.integer :head_id
+      t.integer :chest_id
+      t.integer :arms_id
+      t.integer :waist_id
+      t.integer :legs_id
     end
   end
 end
