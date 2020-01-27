@@ -18,17 +18,6 @@ gearset_list.each do |name, url|
   Gearset.create(name: name, image: url, user_id: user.id, gearset_materials_id: nil)
 end
 
-gearset_materials_list = [
-  "Coral Pukei Alpha +",
-  "Rajang Alpha +",
-  "Safi'jiiva Alpha +",
-  "Velkhana Alpha +"
-]
-
-gearset_materials_list.each do |name|
-  GearsetMaterial.create(name: name,  gearset_id: nil, material_id: nil)
-end
-
 material_list = [
   ["Pukei Lagoon Hat Alpha +", "head"],
   ["Pukei Lagoon Mail Alpha +", "chest"],
