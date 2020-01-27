@@ -1,3 +1,0 @@
-class GearsetMaterialsController < ApplicationController
-  
-end
